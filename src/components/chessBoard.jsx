@@ -6,12 +6,11 @@ function chessBoard() {
     <div className="flex justify-center items-center">
       <Chessboard
         position="start"
-        boardWidth={450}
+        boardWidth={window.innerWidth < 640 ? Math.min(window.innerWidth - 60, 320) : window.innerWidth < 1024 ? 350 : window.innerWidth * 0.4}
         areArrowsAllowed={true}
         arePiecesDraggable={true}
         showCoordinates={true}
         customArrowColor="yellow"
-        customSquareColor="blue"
         customBoardStyle={{
           borderRadius: "8px",
           boxShadow: "0 10px 25px rgba(0, 0, 0, 0.5)",
@@ -22,4 +21,5 @@ function chessBoard() {
     </div>
   );
 }
+
 export default chessBoard;
